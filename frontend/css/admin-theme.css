@@ -1,0 +1,42 @@
+:root {
+  --admin-theme-toggle-bg: rgba(255, 255, 255, 0.15);
+  --admin-theme-toggle-text: #ffffff;
+  --admin-theme-toggle-hover-bg: rgba(255, 255, 255, 0.25);
+  --admin-theme-toggle-border: rgba(255, 255, 255, 0);
+}
+
+/* Match customer button look */
+body.admin-page #themeToggler.theme-toggle-btn {
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--admin-theme-toggle-bg);
+  color: var(--admin-theme-toggle-text);
+  transition: background-color 0.2s ease;
+}
+
+body.admin-page #themeToggler.theme-toggle-btn:hover,
+body.admin-page #themeToggler.theme-toggle-btn:focus {
+  outline: none;
+  background: var(--admin-theme-toggle-hover-bg);
+}
+
+/* When dark mode is on for admin, keep same button styling (text already readable) */
+html.dark body.admin-page #themeToggler.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+/* --- تعديل زر تبديل الثيم للأدمن في الوضع المظلم --- */
+html.dark body.admin-page #themeToggler.theme-toggle-btn {
+  background: #213a2b !important; /* لون داكن متناسق مع لون السايدبار */
+  color: #e7f2ea !important; /* لون نص واضح */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* حركة الزر في الوضع المظلم عند تمرير الماوس */
+html.dark body.admin-page #themeToggler.theme-toggle-btn:hover {
+  background: #4a7c59 !important; /* يتحول للأخضر الأساسي عند التمرير */
+  color: #ffffff !important;
+}
